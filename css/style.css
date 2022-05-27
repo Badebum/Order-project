@@ -1,3 +1,16 @@
+:root {
+  --order-status-color-green: #6ba342;
+  --order-status-bg-green: #e3fac6;
+  --order-status-color-purple: #855c98;
+  --order-status-bg-purple: #efd5ff;
+  --order-status-color-orange: #de8230;
+  --order-status-bg-orange: #fff0d4;
+  --order-status-color-blue: #384b9a;
+  --order-status-bg-blue: #dee4ff;
+  --order-status-color-red: #bf2531;
+  --order-status-bg-red: #ffdcd5;
+}
+
 /*global style start*/
 *,
 *::before,
@@ -7,7 +20,7 @@
 }
 
 * {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -26,8 +39,8 @@ dd {
   margin: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -95,8 +108,8 @@ a:hover {
   outline: 0;
 }
 
-a[href*='mailto']:hover,
-a[href*='tel']:hover {
+a[href*="mailto"]:hover,
+a[href*="tel"]:hover {
   text-decoration: underline;
 }
 
@@ -171,4 +184,164 @@ li {
   .container {
     max-width: 1000px;
   }
+}
+
+/* left block */
+
+.prodact-info {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 16px 17px;
+}
+
+.prodact-left-top-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prodact-left__stars {
+  display: flex;
+  width: 50%;
+}
+
+.prodact-left__options-icon {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.options-icon__heart {
+  margin-right: 16px;
+}
+
+/* end left block */
+
+/* right block */
+
+.prodact-rigth__block {
+  background: #f8f8f8;
+}
+
+.products-item-inner__quantity {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prod_count_btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100px;
+  height: 35px;
+  background: #ffffff;
+  border: 1px solid #383838;
+  border-radius: 3px;
+  margin: 0;
+}
+
+.prod_count_btn.disabled {
+  border: 1px solid #d0cfcf;
+  pointer-events: none;
+}
+
+.prod_count_btn .btn-count {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 33%;
+  height: 100%;
+  color: #d0cfcf;
+}
+
+.prod_count_btn.disabled > .btn-count {
+  color: #d0cfcf;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prod_count_btn .minus {
+  font-size: 18px;
+  line-height: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prod_count_btn .minus::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 70%;
+  border-right: 1px solid #383838;
+}
+
+.prod_count_btn .plus {
+  font-size: 18px;
+  line-height: 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prod_count_btn .plus::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 70%;
+  border-left: 1px solid #383838;
+}
+
+.prod_count_btn .count {
+  font-family: "PT Sans Caption";
+  width: 33%;
+  height: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 15px;
+  color: #383838;
+  box-sizing: border-box;
+  border: none;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.prod_count_btn.disabled > .minus,
+.prod_count_btn.disabled > .plus {
+  cursor: default;
+}
+
+.prod_count_btn.disabled > .minus::after,
+.prod_count_btn.disabled > .plus::after {
+  border: 1px solid #d0cfcf;
 }
