@@ -404,6 +404,7 @@ li {
   align-items: center;
   padding: 16px 0 19px;
   cursor: pointer;
+  position: relative;
 }
 
 .asid__arrow {
@@ -422,7 +423,7 @@ li {
 }
 
 .aside__top-item.active {
-  margin-bottom: 23px;
+  margin-bottom: 7px;
 }
 
 .aside__top-item.active ~ .aside__wrap {
@@ -530,10 +531,10 @@ li {
 }
 
 .aside__color-box {
-  height: 150px;
+  height: 100px;
   display: flex;
   flex-direction: column;
-  /* margin-bottom: 12px; */
+  margin-bottom: 12px;
   overflow: hidden;
 }
 
@@ -562,14 +563,37 @@ li {
   width: 74px;
   height: 23px;
   border: 1px solid #eeeff1;
+  background-color: #eeeff1;
 }
 
-.aside__color-label._red::before {
-  background-color: red;
+.aside__color-label.red::before {
+  background-image: url(../img/color/red.jpg);
+}
+.aside__color-label.medniy::before {
+  background-image: url(../img/color/mednyy.jpg);
 }
 
 .aside__color-input:checked ~ .aside__color-label::before {
   border: 3px solid black;
+}
+.info-box {
+  position: absolute;
+  top: -35px;
+  right: 35px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 118px;
+  height: 42px;
+  padding: 9px 14px;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.info-icon:hover .info-box {
+  display: flex;
 }
 
 @media screen and (min-width: 768px) {
