@@ -42,7 +42,7 @@ html:focus-within {
 }
 
 body {
-  background-color: #e5e5e5;
+  background-color: #ededed;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -285,6 +285,7 @@ li {
   margin-right: 8px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .bx-breadcrumb .bx-breadcrumb-item_mobile {
@@ -310,11 +311,19 @@ li {
   line-height: 13px;
   font-size: 12px;
   vertical-align: middle;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .fa-angle-right:before {
-  content: ">";
+    content: "";
+    background: url(../img/svg/arrow_slim.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 10px;
+    top: 16%;
+    position: absolute;
+    transform: rotate(-90deg);
 }
 
 .bx-breadcrumb__more {
@@ -326,6 +335,7 @@ li {
   border: 1px solid #c4c4c4;
   color: #c4c4c4;
   background-color: #fff;
+  margin-right: 8px;
 }
 
 .bx-breadcrumb-item_box {
@@ -364,7 +374,7 @@ li {
 }
 
 .breadcrumb__item-box_first {
-  padding: 12px 16px;
+  padding: 0 16px;
   background-color: red;
   margin: 0 -9px;
 }
@@ -376,6 +386,7 @@ li {
 .breadcrumb__item-box_first .cross {
   width: 19px;
   height: 19px;
+  fill: white;
 }
 
 .breadcrumb__link_last {
@@ -635,6 +646,7 @@ li {
   font-size: 26px;
   line-height: 30px;
 }
+
 .prompt-holder {
   position: relative;
 }
@@ -1173,6 +1185,7 @@ input::-webkit-inner-spin-button {
 .tab__inner.active {
   display: block;
   position: relative;
+  margin-bottom: 32px;
 }
 
 .tab__feature {
@@ -1253,7 +1266,7 @@ input::-webkit-inner-spin-button {
   padding: 7px 12px;
 }
 
-.tab__row:nth-child(2n) {
+.tab__row:nth-child(2n + 1) {
   background-color: #f9f9f9;
 }
 
@@ -1440,10 +1453,6 @@ input::-webkit-inner-spin-button {
   font-size: 14px;
   line-height: 16px;
 }
-
-/* .tab__text-adds span{
-  font-weight: 700;
-} */
 
 .tab__text-match {
   font-weight: 500;
@@ -1822,7 +1831,7 @@ input::-webkit-inner-spin-button {
 }
 
 .service-center-text {
-  margin-bottom: 48px;
+  margin-bottom: 72px;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
@@ -1843,10 +1852,6 @@ input::-webkit-inner-spin-button {
   position: relative;
   text-align: center;
   padding: 11px 12px;
-}
-
-.product-analog__dop-info {
-  display: none;
 }
 
 .product-analog__img {
@@ -1960,7 +1965,8 @@ input::-webkit-inner-spin-button {
 .tab__close-btn,
 .product-price__txt,
 .card_img2,
-.btn__print-page {
+.btn__print-page,
+.product-analog__dop-info {
   display: none;
 }
 
@@ -2086,6 +2092,17 @@ input::-webkit-inner-spin-button {
 
   .breadcrumb__link_last {
     color: #333333;
+  }
+
+  .fa-angle-right:before {
+    content: "";
+    background: url(../img/svg/arrow_down.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
+    width: 8px;
+    height: 6px;
+    top: 30%;
   }
 
   .product-main-title {
@@ -2338,6 +2355,7 @@ input::-webkit-inner-spin-button {
   .tabs_btn.active {
     background: #fff;
     border-top: 3px solid red;
+    font-weight: 500;
   }
 
   .section-delivery {
@@ -2389,6 +2407,7 @@ input::-webkit-inner-spin-button {
   .tab__address-item_pickup.active .tab__address-inner_pickup {
     background-color: #f8f8f8;
     padding-bottom: 14px;
+    margin-bottom: 14px;
   }
 
   .tab__wrap_address {
@@ -2424,7 +2443,7 @@ input::-webkit-inner-spin-button {
 
   .tab__receipt-map {
     order: 2;
-    width: 64%;
+    width: 62%;
     margin-left: 4px;
   }
 
@@ -2755,6 +2774,9 @@ input::-webkit-inner-spin-button {
   .product-analog__img {
     display: flex;
     align-items: center;
+    max-width: 302px;
+    max-height: 275px;
+    height: 275px;
   }
 
   .product__img-shild {
@@ -2775,6 +2797,7 @@ input::-webkit-inner-spin-button {
     padding: 0 41px;
     font-size: 16px;
     line-height: 19px;
+    height: 57px;
   }
 
   .tab__stock_slide {
@@ -2793,10 +2816,6 @@ input::-webkit-inner-spin-button {
     margin-bottom: 4px;
   }
 
-  .product-analog__btn-wrap {
-    display: flex;
-  }
-
   .product-offers__btnbasket {
     width: 57%;
     height: 43px;
@@ -2805,12 +2824,6 @@ input::-webkit-inner-spin-button {
   .product-offers__fast-btn {
     width: 43%;
     height: 43px;
-  }
-
-  .product-analog__img {
-    max-width: 302px;
-    max-height: 275px;
-    height: 275px;
   }
 
   .product-analog__price {
@@ -3033,7 +3046,10 @@ input::-webkit-inner-spin-button {
     font-weight: 700;
     font-size: 26px;
     line-height: 30px;
-    margin-bottom: 1px;
+  }
+
+  .tab__receipt-title {
+    margin-bottom: 42px;
   }
 
   .tab__delivery {
@@ -3058,7 +3074,7 @@ input::-webkit-inner-spin-button {
   }
 
   .tabs_btn {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color: #666666;
@@ -3226,6 +3242,7 @@ input::-webkit-inner-spin-button {
   .product-analog__btn-wrap {
     padding: 0 18px;
     margin-bottom: 19px;
+    display: flex;
   }
 
   .product-offers__btnbasket,
@@ -3249,5 +3266,9 @@ input::-webkit-inner-spin-button {
 
   .info_bonus-analog {
     left: -13px;
+  }
+
+  .product-analog__title {
+    font-size: 24px;
   }
 }

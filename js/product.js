@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   openReviewsForm(".tab__rev-btn", ".tab__form-rev");
   openReviewsForm(".bx-breadcrumb__more", ".bx-breadcrumb-item_box");
+  openReviewsForm(".cross", ".bx-breadcrumb-item_box");
 
   const calcProductСounter = () => {
     const formProduct = document.querySelectorAll(".product-count");
@@ -156,33 +157,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   document.addEventListener("click", delegateAdressPickup);
 
-  function delegateInfoPropmt(el) {
-    el = el.target;
+  // function delegateInfoPropmt(el) {
+  //   el = el.target;
 
-    if (!el.closest(".prompt-info_stok.active, .prompt-info_stock.active ")) {
-      document.querySelector(".prompt-info_stock").classList.remove("active");
-    }
+  //   if (!el.closest(".prompt-info_stok.active, .prompt-info_stock.active ")) {
+  //     document.querySelector(".prompt-info_stock").classList.remove("active");
+  //   }
 
-    if (el.closest(".prompt-info_stok")) {
-      document.querySelector(".prompt-info_stock").classList.add("active");
-    }
+  //   if (el.closest(".prompt-info_stok")) {
+  //     document.querySelector(".prompt-info_stock").classList.add("active");
+  //   }
 
-    if (!el.closest(".prompt-info_label.active, .info-bonus_prod.active ")) {
-      document.querySelector(".info-bonus_prod").classList.remove("active");
-    }
+  //   if (!el.closest(".prompt-info_label.active, .info-bonus_prod.active ")) {
+  //     document.querySelector(".info-bonus_prod").classList.remove("active");
+  //   }
 
-    if (el.closest(".prompt-info_label")) {
-      document.querySelector(".info-bonus_prod").classList.add("active");
-    }
+  //   if (el.closest(".prompt-info_label")) {
+  //     document.querySelector(".info-bonus_prod").classList.add("active");
+  //   }
 
-    // if (!el.closest(".prompt-info_analog.active, .info_bonus-analog.active ")) {
-    //   document.querySelector(".info_bonus-analog").classList.remove("active");
-    // }
-    // if (el.closest(".prompt-info_analog")) {
-    //   document.querySelector(".info_bonus-analog").classList.add("active");
-    // }
-  }
-  document.addEventListener("click", delegateInfoPropmt);
+  //   // if (!el.closest(".prompt-info_analog.active, .info_bonus-analog.active ")) {
+  //   //   document.querySelector(".info_bonus-analog").classList.remove("active");
+  //   // }
+  //   // if (el.closest(".prompt-info_analog")) {
+  //   //   document.querySelector(".info_bonus-analog").classList.add("active");
+  //   // }
+  // }
+  // document.addEventListener("click", delegateInfoPropmt);
 
   // slider icon licke and comparison
   const likeSlider = (elementActive) => {
@@ -249,4 +250,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // подсказка "?"
   infoHandler(".swiper__analog", ".prompt-info_analog", ".info_bonus-analog");
+  infoHandler(".product-price__current", ".prompt-info_stok", ".prompt-info_stock");
+  infoHandler(".product-bonus", ".prompt-info_label", ".info-bonus_prod");
 });
